@@ -22,7 +22,7 @@
             float: left;
         }
     </style>
-   
+
 
     <!-- 打印和PDF输出样式 -->
     <script>
@@ -41,7 +41,7 @@
 <div class="reveal default center" role="application" data-transition-speed="slow" data-background-transition="fade">
     <div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.756);">
         <section class="past" style="top: 158px; display: none;" hidden="" aria-hidden="true">
-            <h3>洗牌算法具体指的是什么？</h3>
+            <h3>js有哪几种传参方式？</h3>
             <p>分享人：吉海鹏</p>
         </section>
         <section class="past" style="top: 3px; display: block;" hidden="" aria-hidden="true">
@@ -59,7 +59,7 @@
         <section class="past" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h3>1.背景介绍</h3>
         </section>
-        <section class="past" style="top: 267px; display: block;" hidden="" aria-hidden="true">     
+        <section class="past" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <p>
                 《js高级程序设计》上这样叙述参数传递：所有函数的参数都是按值传递的,也就是说把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量一样。
             </p>
@@ -69,10 +69,18 @@
             <h3>2.知识剖析</h3>
         </section>
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
-                <p>1.URL传参</p>
-                <p>2.H5 web storage</p>
-                <p>3.Cookie</p>
-                <p>4.Form 表单</p>
+            <p>1.URL传参</p>
+            <p>把参数值附在url后面传递到其他页面</p>
+        </section>
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <p>2.H5 web storage</p>
+            <p>localStroage 和 sessionStorage</p>
+            <p>localStorage 是 HTML5 标准中新加入的技术，它并不是什么划时代的新东西。 早在 IE 6 时代，就有一 个叫 userData 的东西用于本地存储，而当时考虑到浏览器兼容性， 更通用的方案是使用 Flash。而如今，localStorage 被大多数浏览器所支持，更多用他来存储数据。</p>
+            <p>sessionStorage 与 localStorage 的接口类似， 但保存数据的生命周期与 localStorage 不同。直译过来是“会话”。 而 sessionStorage 是一个前端的概念， 它只 是可以将一部分数据在当前会话中保存下来， 刷新页面数据依旧存在。 但当页面关闭后，sessionStorage 中的数据就会被清空</p>
+        </section>
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <p>3.Cookie</p>
+            <p>Cookie（也叫Web cookie或者浏览器Cookie）是服务器发送到用户浏览器并保存在浏览器上的一块数据， 它会在浏览器下一次发起请求时被携带并发送到服务器上。比较经典的，可以它用来确定两次请求是否来自于同一个浏 览器，从而能够确认和保持用户的登录状态。Cookie的使用使得基于无状态的HTTP协议上记录稳定的状态信息成为了可能。</p>
         </section>
 
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
@@ -85,8 +93,6 @@
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h3>4.解决方案</h3>
         </section>
-        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
-        </section>
 
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h3>5.编码实战</h3>
@@ -95,31 +101,78 @@
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h3>6.扩展思考</h3>
         </section>
-        
+
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h4>几种方式孰优孰劣？</h4>
-            <p></p>
+        </section>
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <h5>URL传参</h5>
+            <p style="text-align: left">优势：</p>
+            <p style="text-align: left">1.简洁易用，可同时传递多个字符型参数</p>
+            <p style="text-align: left">2.可以很方便的在多个页面之间传递参数，无需额外处理，对性能影响微乎其微</p>
+            <p style="text-align: left">劣势：</p>
+            <p style="text-align: left">1.安全性没有保障，传递的参数直接显示在URL地址中</p>
+            <p style="text-align: left">2.长度受限，最大为2K</p>
+            <p style="text-align: left">3.只能传递字符型参数，由于编码原因，传递中文时容易出错，显示乱码或解析错误等</p>
+        </section>
+
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <h5>H5 web storage</h5>
+            <p style="text-align: left">优势：</p>
+            <p style="text-align: left">1.sessionStorage在页面关闭后删除，localStorage永久储存，除非手动删除。分别适用于不同情况。</p>
+            <p style="text-align: left">2.可以存储最大5M的数据，保存在浏览器中用于性能优化，可以提高页面的浏览速度</p>
+            <p style="text-align: left">劣势：</p>
+            <p style="text-align: left">兼容性问题，h5 web storage要求浏览器至少要支持到4MB，对于当今主流浏览器可以使用，但ie8之前的版本不适用。</p>
+        </section>
+
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <h5>cookie</h5>
+            <p style="text-align: left">优势：</p>
+            <p style="text-align: left">1.可以永久保存，同时可以设置存活周期。</p>
+            <p style="text-align: left">2.记录用户的信息，例如登录信息，购物车等，让用户二次访问页面时不用重复操作</p>
+            <p style="text-align: left">劣势：</p>
+            <p style="text-align: left">1.每次网络请求 Request headers 中都会带上Cookie。所以如果 Cookie太多太大对传输效率会有影响。</p>
+            <p style="text-align: left">2.一般浏览器存储Cookie最大容量为4k，所以大量数据不要存到Cookie。</p>
+
         </section>
 
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h3>7.参考文献</h3>
-        </section>
-        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
-            <h4></h4>
+            <p style="text-align: left">参考一：js传参方式
+
+                https://www.kancloud.cn/digest/yvettelau/137669
+            </p>
+            <p style="text-align: left">
+                参考二：理解cookie及其用法
+
+                http://www.runoob.com/html/html5-webstorage.html
+            </p>
+            <p style="text-align: left">
+                参考三：web Storage
+
+                http://www.runoob.com/js/js-cookies.html
+            </p>
         </section>
 
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h3>8.更多讨论</h3>
         </section>
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
-            <h4>洗牌算法是否是真正的随机？</h4>
-            <p>答：之前已经说过，洗牌算法是依赖于Math.random()的方法，而Math.random()是伪随机，是计算机生成的一个序列，所以洗牌算法也不是真正的随机，只是最终结果的概率非常接近。</p>
+            <h4>用哪种传参方式比较好</h4>
+            <p>答：这个就是活学活用，根据不同情况来使用不同的方法</p>
+            <p>比如记录登录信息用cookie，页面内表格的翻页可以用URL控制，大型的文件用H5</p>
         </section>
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
-            <h4>除了洗牌算法还有哪些经典的算法。</h4>
-            <p>冒泡排序，快速排序，插入排序，二分查找，选择排序，希尔排序，归并排序，堆排序，基数排序。</p>
-            <p>参考文献<a href="https://www.cnblogs.com/dushao/p/6004883.html">https://www.cnblogs.com/dushao/p/6004883.html</a></p>
+            <h4>为什js本地网页无法设置cookie？</h4>
+            <p>答：出于安全考虑，chrome本地环境cookie是禁止的，可以给他个服务器环境，或者用firebox。
+            </p>
         </section>
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <h4>传参是按值传递还是引用传递</h4>
+            <p>答：js中所有的参数都是传值类型，当我们将一个值传递到函数内部时，一个临时的局部变量会被创建，形成对这个参数的一个拷贝，任何对该值的改变都不会影响原有的外部变量
+            </p>
+        </section>
+
         <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
             <h4>鸣谢</h4>
             <p>感谢大家观看</p>
@@ -127,15 +180,15 @@
         </section>
 
     </div>
-<div class="backgrounds"><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background stack present" data-loaded="true" style="display: block;"><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background present" data-loaded="true" style="display: block;"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div></div><div class="slide-background future" style="display: none;"></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div></div><div class="slide-background future" style="display: none;"></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 260.19px;"></span></div><aside class="controls" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"></button><button class="navigate-right enabled" aria-label="next slide"></button><button class="navigate-up enabled" aria-label="above slide"></button><button class="navigate-down" aria-label="below slide"></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe=""></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
-               
-                语法：
-                return[()[expression][]];
-                可选项 expression 参数是要从函数返回的值。如果省略，则该函数不返回值。
-            
-                用 return 语句来终止一个函数的执行，并返回 expression 的值。如果 expression 被省略，
-                    或在函数内没有 return 语句被执行，则把值 undefined 赋给调用当前函数的表达式。
-            </div></div>
+    <div class="backgrounds"><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background stack present" data-loaded="true" style="display: block;"><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background present" data-loaded="true" style="display: block;"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div></div><div class="slide-background future" style="display: none;"></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div></div><div class="slide-background future" style="display: none;"></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background present" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 260.19px;"></span></div><aside class="controls" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"></button><button class="navigate-right enabled" aria-label="next slide"></button><button class="navigate-up enabled" aria-label="above slide"></button><button class="navigate-down" aria-label="below slide"></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe=""></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+
+    语法：
+    return[()[expression][]];
+    可选项 expression 参数是要从函数返回的值。如果省略，则该函数不返回值。
+
+    用 return 语句来终止一个函数的执行，并返回 expression 的值。如果 expression 被省略，
+    或在函数内没有 return 语句被执行，则把值 undefined 赋给调用当前函数的表达式。
+</div></div>
 
 <script src="https://ptteng.github.io/PPT/lib/reveal/js/head.min.js"></script>
 <script src="https://ptteng.github.io/PPT/lib/reveal/reveal.js"></script>
@@ -269,30 +322,6 @@
     //
     //    console.log(person.name);
     //    console.log(aPerson.friends)
-
-    var Chinese = {
-        nation: '中国'
-
-    }
-    var Doctor = {
-        career: '医生'
-    }
-
-    function extendCopy(p) {
-        var c = {};
-        for (var i in p) {
-            c[i] = p[i];
-        }
-        c.uber = p;
-        return c;
-    }
-
-    var Doctor = extendCopy(Chinese);
-    Doctor.career = '医生';
-    console.log(Doctor); // 中国
-    Chinese.birthPlaces = ['北京', '上海', '香港'];
-    var Doctor = extendCopy(Chinese);
-    Doctor.birthPlaces.push('厦门');
 
 </script>
 

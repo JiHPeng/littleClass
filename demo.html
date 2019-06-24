@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>萝卜多后台管理系统</title>
+    <style>
+        button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 60%;
+            color: #fff3cd;
+        }
+    </style>
+</head>
+
+<body style="text-align: center">
+<label for="user">账号</label>
+<input type="text" id="user">
+<label for="pwd">密码</label>
+<input type="text" id="pwd">
+<br>
+<button id="get" style="background-color: #880f55;">获取参数</button>
+<button id="urlt" style="background-color: #1c7430">URL传参</button>
+<button id="urlr" style="background-color: #1c7430">URL读取</button>
+<button id="localt" style="background-color: #0c5460;">localStorage传参</button>
+<button id="localr" style="background-color: #23605a;">localStorage读取</button>
+<button id="sessiont" style="background-color: #604b1e;">sessionStorage传参</button>
+<button id="sessionr" style="background-color: #576014;">sessionStorage读取</button>
+<button id="cookiet" style="background-color: #255632;">cookie传参</button>
+<button id="cookier" style="background-color: #255632;">cookie读取</button>
+
+<form>
+    <input type="text">
+    <input type="password">
+    <input type="submit">
+</form>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="demo.js"></script>
+</body>
+</html>

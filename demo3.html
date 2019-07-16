@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="demo" id="demo1" style="background-color: #cc6166">111</div>
+<div class="demo" id="demo2" style="background-color: #4d70cc">222</div>
+<div class="demo" id="demo3" style="background-color: #83cc8a">333</div>
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+    //单独使用
+    console.log(this);
+    //window
+
+    //在函数中
+    function aaa() {
+        console.log(this);
+        //window
+    }
+    aaa();
+
+    //方法中
+    var a = {
+        name: "lilei",
+        age: 12,
+        info:function(){
+            console.log(this);
+            return this.name + this.age
+        }
+    };
+    console.log(a.info());
+    //指向方法所属的对象
+
+    //在事件中
+    $(".demo").click(function () {
+        console.log(this);
+        //点击的对象，即接收事件的元素
+    });
+
+//    $(".demo").click(function (e) {
+//       console.log(e.target);
+//    })
+
+    //构造函数
+    function Demo(name,age) {
+        this.name = name;
+        this.age = age;
+        this.info = this.name + " " +this.age;
+        console.log(this);
+    }
+    var z = new Demo("hanmeimei", 12);
+    var y = new Demo("lilei", 13);
+     //指向实例化的对象
+    console.log(z);
+    console.log(y);
+
+    var name = "lilei",age = 12;
+    var obj = {
+        name: 'hanmeimei',
+        objAge: this.age,
+        myFun:function () {
+            return this.name + this.age
+        }
+    };
+    var x = {
+        name:'hangang',
+        age:'13'
+    };
+    console.log(obj.myFun);
+    console.log(obj.myFun());
+    console.log(obj.myFun.call(x));
+    console.log(obj.myFun.apply(x));
+    //相当于把this指向了x
+
+    //call和apply的区别在于方法中的参数不同
+
+
+</script>
+</body>
+</html>

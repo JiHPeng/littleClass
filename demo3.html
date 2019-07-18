@@ -20,17 +20,19 @@
 
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 <script>
+
+
     //单独使用
     console.log(this);
-    //window
+    window
 
     //在函数中
     function aaa() {
         console.log(this);
         //window
     }
-    aaa();
-
+//    aaa();
+////
     //方法中
     var a = {
         name: "lilei",
@@ -41,7 +43,7 @@
         }
     };
     console.log(a.info());
-    //指向方法所属的对象
+//    指向方法所属的对象
 
     //在事件中
     $(".demo").click(function () {
@@ -49,9 +51,9 @@
         //点击的对象，即接收事件的元素
     });
 
-//    $(".demo").click(function (e) {
-//       console.log(e.target);
-//    })
+    $(".demo").click(function (e) {
+       console.log(e.target);
+    })
 
     //构造函数
     function Demo(name,age) {
@@ -62,15 +64,15 @@
     }
     var z = new Demo("hanmeimei", 12);
     var y = new Demo("lilei", 13);
-     //指向实例化的对象
-    console.log(z);
-    console.log(y);
+//     //指向实例化的对象
+//    console.log(z);
+//    console.log(y);
 
     var name = "lilei",age = 12;
     var obj = {
         name: 'hanmeimei',
         objAge: this.age,
-        myFun:function () {
+        myFun:function (a, b, c) {
             return this.name + this.age
         }
     };
@@ -78,13 +80,11 @@
         name:'hangang',
         age:'13'
     };
-    console.log(obj.myFun);
-    console.log(obj.myFun());
-    console.log(obj.myFun.call(x));
-    console.log(obj.myFun.apply(x));
-    //相当于把this指向了x
-
+    console.log(obj.myFun.call(x,a,b,c));
+    console.log(obj.myFun.apply(x,[a,b,c]));
+//    //相当于把this指向了x
     //call和apply的区别在于方法中的参数不同
+
 
 
 </script>
